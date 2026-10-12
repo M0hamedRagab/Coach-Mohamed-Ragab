@@ -223,45 +223,46 @@ html[lang="ar"] .hero h1{font-size:clamp(3rem,8.5vw,6.2rem);font-weight:900;line
 .t-item:nth-child(even) .t-dot{inset-inline-end:auto;inset-inline-start:-11px}
 .t-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s}
 .t-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--orange)}
-.t-img{aspect-ratio:16/10;overflow:hidden;background:var(--navy)}
-.t-img img{width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform .7s}
-.t-card:hover .t-img img{transform:scale(1.06)}
-.t-img.square{aspect-ratio:1/1;max-height:340px}
-.t-body{padding:22px 26px 26px}
-.t-when{display:inline-block;background:var(--navy);color:#fff;padding:3px 16px;border-radius:999px;font-weight:600;font-size:.88rem;margin-bottom:10px}
+.t-body{padding:24px 26px 26px}
+.t-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.t-ic{width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--orange);display:grid;place-items:center;flex:none}
+.t-ic .icon{width:22px;height:22px}
+@media (prefers-color-scheme:dark){.t-ic{background:rgba(255,255,255,.12)}}
+.t-when{display:inline-block;background:var(--navy);color:#fff;padding:3px 16px;border-radius:999px;font-weight:600;font-size:.88rem}
 .t-when.hl{background:var(--orange);color:var(--navy)}
 @media (prefers-color-scheme:dark){.t-when:not(.hl){background:rgba(255,255,255,.12)}}
 .t-body h3{font-size:1.2rem;font-weight:800;line-height:1.45;margin-bottom:6px}
 .t-body p{color:var(--muted);font-size:.97rem}
-.t-final{display:grid;place-items:center;padding:30px 20px 6px}
-.t-final .logo-box{width:84px;height:84px;background:#fff}
 @media (max-width:820px){
   .timeline::before{inset-inline-start:18px;transform:none}
   .t-item,.t-item:nth-child(even){width:100%;margin-inline-start:0;padding-inline:54px 0}
   .t-dot,.t-item:nth-child(even) .t-dot{inset-inline-end:auto;inset-inline-start:7px}
 }
 
-/* GALLERY */
-.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+/* PHOTO RAIL (auto-moving, draggable) */
+.rail{direction:ltr;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch;padding:10px 0;-webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+.rail::-webkit-scrollbar{display:none}
+.rail.dragging{cursor:grabbing;user-select:none}
+.rail-track{display:flex;gap:16px;width:max-content}
+.rail-item{flex:0 0 auto;width:260px;height:340px;border-radius:16px;overflow:hidden;position:relative;background:var(--navy);margin:0}
+.rail-item .g-btn{display:grid;place-items:center;width:100%;height:100%;position:relative}
+.rail-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s;-webkit-user-drag:none;user-select:none}
+.rail-item:hover img{transform:scale(1.06)}
+.rail-item.small .g-btn{background:linear-gradient(135deg,var(--navy),var(--navy-l))}
+.rail-item.small img{width:auto;height:auto;max-width:calc(100% - 28px);max-height:calc(100% - 28px);border-radius:10px;object-fit:contain}
+.rail-item.small:hover img{transform:scale(1.03)}
+.g-btn::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,31,75,.75),transparent 55%);opacity:0;transition:opacity .35s;pointer-events:none}
+.rail-item:hover .g-btn::after,.g-btn:focus-visible::after{opacity:1}
+.g-zoom{position:absolute;z-index:2;inset-inline-end:14px;bottom:14px;width:44px;height:44px;border-radius:50%;background:var(--orange);color:var(--navy);display:grid;place-items:center;opacity:0;transform:translateY(10px);transition:.35s}
+.rail-item:hover .g-zoom,.g-btn:focus-visible .g-zoom{opacity:1;transform:none}
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
 .filter{padding:10px 26px;border-radius:999px;border:2px solid var(--line);font-weight:600;color:var(--text);transition:.25s;background:var(--card)}
 .filter:hover{border-color:var(--orange)}
 .filter.active{background:var(--orange);border-color:var(--orange);color:var(--navy)}
-.masonry{columns:3;column-gap:18px}
-.g-item{break-inside:avoid;margin-bottom:18px;border-radius:16px;overflow:hidden;position:relative;background:var(--navy);animation:pop .5s both}
-.g-item.hide{display:none}
-@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
-.g-btn{display:block;width:100%;position:relative}
-.g-item img{width:100%;height:auto;transition:transform .6s}
-.g-item.small .g-btn{display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,var(--navy),var(--navy-l))}
-.g-item.small img{width:auto;max-width:100%;border-radius:10px}
-.g-item:hover img{transform:scale(1.06)}
-.g-item.small:hover img{transform:scale(1.03)}
-.g-btn::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,31,75,.75),transparent 55%);opacity:0;transition:opacity .35s}
-.g-item:hover .g-btn::after,.g-btn:focus-visible::after{opacity:1}
-.g-zoom{position:absolute;z-index:2;inset-inline-end:14px;bottom:14px;width:44px;height:44px;border-radius:50%;background:var(--orange);color:var(--navy);display:grid;place-items:center;opacity:0;transform:translateY(10px);transition:.35s}
-.g-item:hover .g-zoom,.g-btn:focus-visible .g-zoom{opacity:1;transform:none}
-@media (max-width:900px){.masonry{columns:2}}
-@media (max-width:480px){.masonry{columns:1}}
+.rail-item[hidden]{display:none}
+.ach-rail{margin-top:56px}
+.sec.gal{padding-bottom:90px}
+@media (max-width:600px){.rail-item{width:200px;height:270px}}
 @media (hover:none){.g-zoom{opacity:1;transform:none;width:38px;height:38px}}
 
 /* LIGHTBOX */
@@ -476,7 +477,7 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     <div class="ach-grid">
       <article class="ach reveal">
         <div class="ach-ic"><svg class="icon"><use href="#i-trophy"/></svg></div>
-        <span class="ach-rank" data-i18n="ach.1r">1st Place</span><h3 data-i18n="ach.1t">Academies Tournament</h3>
+        <span class="ach-rank" data-i18n="ach.1r">1st Place</span><h3 data-i18n="ach.1t">Institutes &amp; Academic Academies League</h3>
       </article>
       <article class="ach reveal" style="--d:.1s">
         <div class="ach-ic"><svg class="icon"><use href="#i-trophy"/></svg></div>
@@ -495,6 +496,18 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
         <span class="ach-rank" data-i18n="ach.5r">Participations</span><h3 data-i18n="ach.5t">Participations alongside academies from Minya</h3>
       </article>
     </div>
+    <div class="ach-rail">
+      <div class="rail" id="railTrophy" role="region" tabindex="0" data-i18n-aria="rail.trophy" aria-label="Photos from tournaments">
+        <div class="rail-track">
+          <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-1.jpg" data-i18n-alt="galt.t1" alt="Cup and medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+          <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-2.jpg" data-i18n-alt="galt.t2" alt="Cups and medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+          <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-3.jpg" data-i18n-alt="galt.t3" alt="Medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+          <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-4.jpg" data-i18n-alt="galt.t4" alt="Cup from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+          <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-5.jpg" data-i18n-alt="alt.t5" alt="ACE Events Tournament Champions shields" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+          <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/about.jpg" data-i18n-alt="alt.about" alt="Mohamed Ragab holding a medal and a trophy" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -508,65 +521,32 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     <div class="timeline">
       <div class="t-item reveal from-start">
         <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-img"><img src="images/action-1.jpg" data-i18n-alt="alt.a1" alt="Mohamed Ragab playing in the hall" loading="lazy"></div>
-          <div class="t-body"><span class="t-when" data-i18n="jr.1w">14 years as a player</span><h3 data-i18n="jr.1t">Al Tayaran Club</h3><p data-i18n="jr.1d">Played as an Opposite Hitter.</p></div>
-        </div>
+        <div class="t-card"><div class="t-body">
+          <div class="t-head"><span class="t-ic"><svg class="icon"><use href="#i-ball"/></svg></span><span class="t-when" data-i18n="jr.1w">14 years as a player</span></div>
+          <h3 data-i18n="jr.1t">Al Tayaran Club</h3><p data-i18n="jr.1d">Played as an Opposite Hitter.</p>
+        </div></div>
       </div>
       <div class="t-item reveal from-end">
         <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-img"><img src="images/action-2.jpg" data-i18n-alt="alt.a2" alt="A match moment inside the hall" loading="lazy"></div>
-          <div class="t-body"><span class="t-when hl">2019</span><h3 data-i18n="jr.2t">1st Place: School League &amp; School Team</h3><p data-i18n="jr.2d">Won first place in the schools league and with the schools team.</p></div>
-        </div>
+        <div class="t-card"><div class="t-body">
+          <div class="t-head"><span class="t-ic"><svg class="icon"><use href="#i-trophy"/></svg></span><span class="t-when hl">2019</span></div>
+          <h3 data-i18n="jr.2t">1st Place: School League &amp; School Team</h3><p data-i18n="jr.2d">Won first place in the schools league and with the schools team.</p>
+        </div></div>
       </div>
       <div class="t-item reveal from-start">
         <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-img square"><img src="images/portrait.jpg" data-i18n-alt="alt.portrait" alt="Portrait of Coach Mohamed Ragab" loading="lazy"></div>
-          <div class="t-body"><span class="t-when" data-i18n="jr.3w">Coach</span><h3 data-i18n="jr.3t">Al Y Club</h3><p data-i18n="jr.3d">Coach of a girls' 15-year-old team and the beginners' (minis) team.</p></div>
-        </div>
+        <div class="t-card"><div class="t-body">
+          <div class="t-head"><span class="t-ic"><svg class="icon"><use href="#i-award"/></svg></span><span class="t-when" data-i18n="jr.3w">Coach</span></div>
+          <h3 data-i18n="jr.3t">Al Y Club</h3><p data-i18n="jr.3d">Coach of a girls' 15-year-old team and the beginners' (minis) team.</p>
+        </div></div>
       </div>
       <div class="t-item reveal from-end">
         <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-final"><span class="logo-box"><img class="logo-img" src="images/logo.png" data-i18n-alt="alt.logo" alt="PLV Academy logo" loading="lazy"><svg class="logo-fallback" viewBox="0 0 100 100" aria-hidden="true"><use href="#i-ball"/></svg></span></div>
-          <div class="t-body"><span class="t-when hl" data-i18n="jr.4w">December 2025</span><h3 data-i18n="jr.4t">Founded PLV Academy</h3><p data-i18n="jr.4d">Opened the academy with two branches in Nasr City and Heliopolis.</p></div>
-        </div>
+        <div class="t-card"><div class="t-body">
+          <div class="t-head"><span class="logo-box"><img class="logo-img" src="images/logo.png" data-i18n-alt="alt.logo" alt="PLV Academy logo" loading="lazy"><svg class="logo-fallback" viewBox="0 0 100 100" aria-hidden="true"><use href="#i-ball"/></svg></span><span class="t-when hl" data-i18n="jr.4w">December 2025</span></div>
+          <h3 data-i18n="jr.4t">Founded PLV Academy</h3><p data-i18n="jr.4d">Opened the academy with two branches in Nasr City and Heliopolis.</p>
+        </div></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. GALLERY -->
-<section class="sec" id="gallery">
-  <div class="container">
-    <div class="sec-head center reveal">
-      <span class="kicker" data-i18n="gal.kicker">Photo Gallery</span>
-      <h2 class="sec-title" data-i18n="gal.title">Moments from the <span>Court</span></h2>
-    </div>
-    <div class="filters reveal" role="tablist" data-i18n-aria="gal.filters" aria-label="Photo filter">
-      <button class="filter active" data-f="all" role="tab" aria-selected="true" data-i18n="gal.all">All</button>
-      <button class="filter" data-f="trophy" role="tab" aria-selected="false" data-i18n="gal.trophy">Tournaments</button>
-      <button class="filter" data-f="play" role="tab" aria-selected="false" data-i18n="gal.play">Match Play</button>
-      <button class="filter" data-f="train" role="tab" aria-selected="false" data-i18n="gal.train">Training</button>
-    </div>
-    <div class="masonry" id="masonry">
-      <figure class="g-item" data-cat="trophy"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-1.jpg" data-i18n-alt="galt.t1" alt="Cup and medals from a tournament" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="play"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/action-1.jpg" data-i18n-alt="alt.a1" alt="Mohamed Ragab playing in the hall" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/coaching-1.jpg" data-i18n-alt="alt.coach" alt="Coach Mohamed Ragab during a training session" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="trophy"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-2.jpg" data-i18n-alt="galt.t2" alt="Cups and medals from a tournament" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/hero.jpg" data-i18n-alt="alt.hero" alt="Coach Mohamed Ragab wearing a PLV Academy shirt" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/gym.jpg" data-i18n-alt="alt.gym" alt="Fitness training in the gym" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="trophy"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/about.jpg" data-i18n-alt="alt.about" alt="Mohamed Ragab holding a medal and a trophy" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="play"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/action-2.jpg" data-i18n-alt="alt.a2" alt="A match moment inside the hall" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="trophy"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-3.jpg" data-i18n-alt="galt.t3" alt="Medals from a tournament" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item small" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/outdoor-1.jpg" data-i18n-alt="alt.o1" alt="Outdoor training" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/poster.jpg" data-i18n-alt="alt.poster" alt="Head Coach Mohamed Ragab poster with the PLV Academy logo" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="trophy"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-4.jpg" data-i18n-alt="galt.t4" alt="Cup from a tournament" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item small" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/outdoor-2.jpg" data-i18n-alt="alt.o2" alt="A moment from an outdoor session" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/portrait.jpg" data-i18n-alt="alt.portrait" alt="Portrait of Coach Mohamed Ragab" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="trophy"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-5.jpg" data-i18n-alt="alt.t5" alt="ACE Events Tournament Champions shields" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
     </div>
   </div>
 </section>
@@ -594,6 +574,44 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     </div>
     <div class="poster-wrap reveal from-end">
       <img src="images/poster.jpg" data-i18n-alt="alt.poster" alt="Head Coach Mohamed Ragab poster with the PLV Academy logo" loading="lazy">
+    </div>
+  </div>
+</section>
+<!-- GALLERY (very bottom, auto-moving + draggable) -->
+<section class="sec gal" id="gallery">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="kicker" data-i18n="gal.kicker">Photo Gallery</span>
+      <h2 class="sec-title" data-i18n="gal.title">Moments from the <span>Court</span></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="filters" role="tablist" data-i18n-aria="gal.filters" aria-label="Photo filter">
+      <button class="filter active" type="button" data-f="all" role="tab" aria-selected="true" data-i18n="gal.all">All</button>
+      <button class="filter" type="button" data-f="trophy" role="tab" aria-selected="false" data-i18n="gal.trophy">Tournaments</button>
+      <button class="filter" type="button" data-f="play" role="tab" aria-selected="false" data-i18n="gal.play">Match Play</button>
+      <button class="filter" type="button" data-f="train" role="tab" aria-selected="false" data-i18n="gal.train">Training</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="rail" id="railGallery" role="region" tabindex="0" data-i18n-aria="rail.gal" aria-label="Photo gallery">
+      <div class="rail-track">
+        <figure class="rail-item" data-cat="play"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/action-1.jpg" data-i18n-alt="alt.a1" alt="Mohamed Ragab playing in the hall" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-1.jpg" data-i18n-alt="galt.t1" alt="Cup and medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/coaching-1.jpg" data-i18n-alt="alt.coach" alt="Coach Mohamed Ragab during a training session" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="play"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/action-2.jpg" data-i18n-alt="alt.a2" alt="A match moment inside the hall" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-2.jpg" data-i18n-alt="galt.t2" alt="Cups and medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/gym.jpg" data-i18n-alt="alt.gym" alt="Fitness training in the gym" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item small" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/outdoor-1.jpg" data-i18n-alt="alt.o1" alt="Outdoor training" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-3.jpg" data-i18n-alt="galt.t3" alt="Medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/portrait.jpg" data-i18n-alt="alt.portrait" alt="Portrait of Coach Mohamed Ragab" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item small" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/outdoor-2.jpg" data-i18n-alt="alt.o2" alt="A moment from an outdoor session" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-4.jpg" data-i18n-alt="galt.t4" alt="Cup from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/hero.jpg" data-i18n-alt="alt.hero" alt="Coach Mohamed Ragab wearing a PLV Academy shirt" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-5.jpg" data-i18n-alt="alt.t5" alt="ACE Events Tournament Champions shields" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/about.jpg" data-i18n-alt="alt.about" alt="Mohamed Ragab holding a medal and a trophy" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+        <figure class="rail-item" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/poster.jpg" data-i18n-alt="alt.poster" alt="Head Coach Mohamed Ragab poster with the PLV Academy logo" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+      </div>
     </div>
   </div>
 </section>
@@ -653,7 +671,7 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     'acad.f3':'<span>فرعين</span><small>مدينة نصر ومصر الجديدة</small>',
     'acad.f4':'<span>لاعبين انضموا لأندية</span><small>ولاعبات بيجهزوا للانضمام</small>',
     'ach.kicker':'البطولات والإنجازات','ach.title':'<span>إنجازاتي</span>','ach.sub':'نتايج ومشاركات في البطولات.',
-    'ach.1r':'المركز الأول','ach.1t':'بطولة الأكاديميات',
+    'ach.1r':'المركز الأول','ach.1t':'دوري المعاهد والأكاديميات',
     'ach.2r':'المركز الأول','ach.2t':'بطولة الجمهورية','ach.2p':'أول مشاركة للجامعة',
     'ach.3r':'المركز الرابع','ach.3t':'بطولة الجامعة الأمريكية','ach.3p':'أول مشاركة',
     'ach.4r':'المركز الثاني','ach.4t':'بطولة فرق البنات',
@@ -663,8 +681,7 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     'jr.2t':'المركز الأول دوري ومنتخب المدارس','jr.2d':'تحقيق المركز الأول في دوري ومنتخب المدارس.',
     'jr.3w':'مدرب','jr.3t':'نادي الواي','jr.3d':'مدرب فريق بنات 15 سنة وفريق البراعم.',
     'jr.4w':'ديسمبر 2025','jr.4t':'تأسيس أكاديمية PLV','jr.4d':'افتتاح الأكاديمية بفرعين في مدينة نصر ومصر الجديدة.',
-    'gal.kicker':'معرض الصور','gal.title':'لحظات من <span>الملعب</span>','gal.filters':'فلتر الصور',
-    'gal.all':'الكل','gal.trophy':'بطولات','gal.play':'لعب','gal.train':'تدريب','gal.zoom':'تكبير الصورة',
+    'gal.kicker':'معرض الصور','gal.title':'لحظات من <span>الملعب</span>','gal.filters':'فلتر الصور','gal.all':'الكل','gal.trophy':'بطولات','gal.play':'لعب','gal.train':'تدريب','gal.zoom':'تكبير الصورة','rail.trophy':'صور من البطولات','rail.gal':'معرض الصور',
     'ct.kicker':'تواصل معايا','ct.title':'جاهز تبدأ <span>رحلتك؟</span>',
     'ct.sub':'كلمني دلوقتي واعرف مواعيد وأماكن الأكاديمية في مدينة نصر ومصر الجديدة.',
     'ct.wa':'واتساب','ct.call':'اتصال','ct.follow':'تابعني على السوشيال ميديا',
@@ -764,33 +781,16 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
   },{threshold:.5}):null;
   $$('.num').forEach(function(n){cio?cio.observe(n):(n.textContent=n.dataset.target+(n.dataset.suffix||''))});
 
-  /* ---------- gallery filter ---------- */
-  var items=$$('.g-item'),filters=$$('.filter');
-  filters.forEach(function(b){
-    b.addEventListener('click',function(){
-      filters.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false')});
-      b.classList.add('active');b.setAttribute('aria-selected','true');
-      var f=b.dataset.f;
-      items.forEach(function(it){
-        var show=f==='all'||it.dataset.cat===f;
-        it.classList.toggle('hide',!show);
-        if(show){it.style.animation='none';void it.offsetWidth;it.style.animation=''}
-      });
-    });
-  });
-
   /* ---------- lightbox ---------- */
   var lb=$('#lb'),lbImg=$('#lbImg'),lbCap=$('#lbCap'),lbCount=$('#lbCount'),cur=0,list=[];
-  function visible(){return items.filter(function(i){return !i.classList.contains('hide')})}
   function show(i){
     cur=(i+list.length)%list.length;
     var im=$('img',list[cur]);
     lbImg.src=im.currentSrc||im.src;lbImg.alt=im.alt;lbCap.textContent=im.alt;
     lbCount.textContent=(cur+1)+' / '+list.length;
   }
-  function open(it){list=visible();show(list.indexOf(it));lb.classList.add('open');document.body.style.overflow='hidden';$('#lbClose').focus()}
+  function openLb(l,i){list=l;show(i);lb.classList.add('open');document.body.style.overflow='hidden';$('#lbClose').focus()}
   function close(){lb.classList.remove('open');document.body.style.overflow=''}
-  items.forEach(function(it){$('.g-btn',it).addEventListener('click',function(){open(it)})});
   $('#lbClose').addEventListener('click',close);
   $('#lbNext').addEventListener('click',function(){show(cur+1)});
   $('#lbPrev').addEventListener('click',function(){show(cur-1)});
@@ -808,6 +808,80 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     var d=e.changedTouches[0].clientX-tx,rtl=document.documentElement.dir==='rtl';
     if(Math.abs(d)>50)show((d>0)===rtl?cur+1:cur-1);  // dragging right reveals the left neighbour
   });
+
+  /* ---------- photo rails: auto-move, drag with mouse, swipe on touch, endless loop, optional filter ---------- */
+  function initRail(rail){
+    var track=$('.rail-track',rail),origs=$$('.rail-item',track),vis=origs.slice(),filter='all';
+    origs.forEach(function(it,i){it.dataset.i=i});
+    function third(){return track.scrollWidth/3}
+    function build(f){
+      filter=f||filter;
+      $$('.rail-item[data-clone]',track).forEach(function(c){c.remove()});
+      vis=origs.filter(function(it){var ok=filter==='all'||it.dataset.cat===filter;it.hidden=!ok;return ok});
+      if(!vis.length)return;
+      var stride=vis[0].offsetWidth+16,k=Math.max(1,Math.ceil((rail.clientWidth+stride)/(vis.length*stride)));
+      for(var c=0;c<3*k-1;c++){vis.forEach(function(it){
+        var cl=it.cloneNode(true);cl.setAttribute('aria-hidden','true');cl.dataset.clone='1';$('.g-btn',cl).tabIndex=-1;track.appendChild(cl);
+      })}
+      rail.scrollLeft=third();
+    }
+    build();
+    window.addEventListener('load',function(){rail.scrollLeft=third()});
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){build()},250)});
+    rail.addEventListener('scroll',function(){
+      var t=third();
+      if(rail.scrollLeft>=2*t)rail.scrollLeft-=t;
+      else if(rail.scrollLeft<t)rail.scrollLeft+=t;
+    },{passive:true});
+    var paused=false,onscreen=false,acc=0,last=0,resume=null,speed=38,moved=false,down=false,sx=0,sl=0;
+    function hold(ms){paused=true;clearTimeout(resume);if(ms)resume=setTimeout(function(){paused=false},ms)}
+    rail.addEventListener('mouseenter',function(){hold()});
+    rail.addEventListener('mouseleave',function(){if(!down)hold(300)});
+    rail.addEventListener('focusin',function(){hold()});
+    rail.addEventListener('focusout',function(){hold(300)});
+    rail.addEventListener('touchstart',function(){hold()},{passive:true});
+    rail.addEventListener('touchend',function(){hold(2500)},{passive:true});
+    rail.addEventListener('wheel',function(){hold(2000)},{passive:true});
+    rail.addEventListener('pointerdown',function(e){
+      if(e.pointerType!=='mouse'||e.button!==0)return;
+      down=true;moved=false;sx=e.clientX;sl=rail.scrollLeft;hold();
+    });
+    window.addEventListener('pointermove',function(e){
+      if(!down)return;
+      var dx=e.clientX-sx;
+      if(Math.abs(dx)>5){moved=true;rail.classList.add('dragging')}
+      if(moved)rail.scrollLeft=sl-dx;
+    });
+    window.addEventListener('pointerup',function(){
+      if(!down)return;down=false;rail.classList.remove('dragging');hold(1500);
+    });
+    rail.addEventListener('click',function(e){
+      if(moved){moved=false;e.preventDefault();return}
+      var it=e.target.closest('.rail-item');if(!it)return;
+      openLb(vis,vis.indexOf(origs[+it.dataset.i]));
+    });
+    // filter pills (only the gallery section has them)
+    var sec=rail.closest('section'),pills=sec?$$('.filter',sec):[];
+    pills.forEach(function(b){b.addEventListener('click',function(){
+      pills.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false')});
+      b.classList.add('active');b.setAttribute('aria-selected','true');
+      build(b.dataset.f);
+    })});
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){onscreen=es[0].isIntersecting}).observe(rail);
+    }else onscreen=true;
+    if(!reduce){
+      (function loop(ts){
+        if(last&&onscreen&&!paused){
+          acc+=speed*Math.min(ts-last,64)/1000;
+          var st=Math.floor(acc);
+          if(st>=1){rail.scrollLeft+=st;acc-=st}
+        }
+        last=ts;requestAnimationFrame(loop);
+      })(0);
+    }
+  }
+  $$('.rail').forEach(initRail);
 })();
 </script>
 </body>
