@@ -202,21 +202,17 @@ html[lang="ar"] .hero h1{font-size:clamp(3rem,8.5vw,6.2rem);font-weight:900;line
 
 /* ACHIEVEMENTS */
 .ach-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:26px}
-.ach{grid-column:span 2;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;position:relative;transition:transform .35s,box-shadow .35s,border-color .35s;display:flex;flex-direction:column}
+.ach{grid-column:span 2;position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:var(--radius);padding:30px 26px 28px;transition:transform .35s,box-shadow .35s,border-color .35s}
 .ach:nth-child(n+4){grid-column:span 3}
+.ach::after{content:"";position:absolute;inset-inline-end:-40px;bottom:-40px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(242,140,30,.2),transparent 70%);pointer-events:none}
 .ach:hover{transform:translateY(-10px);box-shadow:var(--shadow);border-color:var(--orange)}
-.ach-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--navy)}
-.ach-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
-.ach:hover .ach-img img{transform:scale(1.08)}
-.ach-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,31,75,.65),transparent 55%)}
-.ach-ic{position:absolute;z-index:2;inset-inline-start:22px;top:calc(75% - 28px);width:56px;height:56px;border-radius:50%;background:var(--orange);color:var(--navy);display:grid;place-items:center;box-shadow:0 8px 20px rgba(242,140,30,.5);border:3px solid var(--card)}
-.ach-ic .icon{width:28px;height:28px;stroke-width:2}
-.ach-body{padding:42px 24px 26px}
-.ach-rank{display:inline-block;color:var(--accent-text);font-weight:700;font-size:.9rem;margin-bottom:4px}
-.ach-body h3{font-size:1.25rem;font-weight:800;line-height:1.45;margin-bottom:8px}
-.pill{display:inline-block;margin-top:12px;padding:4px 14px;border-radius:999px;background:rgba(242,140,30,.15);color:var(--accent-text);font-weight:600;font-size:.85rem}
-@media (max-width:1000px){.ach-grid{grid-template-columns:1fr 1fr}.ach,.ach:nth-child(n+4){grid-column:span 1}.ach:last-child{grid-column:1/-1}.ach:last-child .ach-img{aspect-ratio:16/8}}
-@media (max-width:640px){.ach-grid{grid-template-columns:1fr}.ach:last-child .ach-img{aspect-ratio:4/3}}
+.ach-ic{width:60px;height:60px;border-radius:50%;background:var(--orange);color:var(--navy);display:grid;place-items:center;box-shadow:0 8px 20px rgba(242,140,30,.45);margin-bottom:18px}
+.ach-ic .icon{width:30px;height:30px;stroke-width:2}
+.ach-rank{display:block;color:var(--accent-text);font-weight:700;font-size:.9rem;margin-bottom:4px}
+.ach h3{font-size:1.25rem;font-weight:800;line-height:1.45}
+.pill{display:inline-block;margin-top:14px;padding:4px 14px;border-radius:999px;background:rgba(242,140,30,.15);color:var(--accent-text);font-weight:600;font-size:.85rem}
+@media (max-width:1000px){.ach-grid{grid-template-columns:1fr 1fr}.ach,.ach:nth-child(n+4){grid-column:span 1}.ach:last-child{grid-column:1/-1}}
+@media (max-width:640px){.ach-grid{grid-template-columns:1fr}}
 
 /* TIMELINE */
 .timeline{position:relative;max-width:1000px;margin-inline:auto}
@@ -474,34 +470,29 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
   <div class="container">
     <div class="sec-head center reveal">
       <span class="kicker" data-i18n="ach.kicker">Tournaments &amp; Achievements</span>
-      <h2 class="sec-title" data-i18n="ach.title">Academy <span>Achievements</span></h2>
-      <p class="sec-sub" data-i18n="ach.sub">Results built on hard work and commitment since the academy's first days.</p>
+      <h2 class="sec-title" data-i18n="ach.title">My <span>Achievements</span></h2>
+      <p class="sec-sub" data-i18n="ach.sub">Tournament results and participations.</p>
     </div>
     <div class="ach-grid">
       <article class="ach reveal">
-        <div class="ach-img"><img src="images/trophy-1.jpg" data-i18n-alt="alt.t1" alt="Cup and medals from the Academies Tournament" loading="lazy"></div>
         <div class="ach-ic"><svg class="icon"><use href="#i-trophy"/></svg></div>
-        <div class="ach-body"><span class="ach-rank" data-i18n="ach.1r">1st Place</span><h3 data-i18n="ach.1t">Academies Tournament</h3></div>
+        <span class="ach-rank" data-i18n="ach.1r">1st Place</span><h3 data-i18n="ach.1t">Academies Tournament</h3>
       </article>
       <article class="ach reveal" style="--d:.1s">
-        <div class="ach-img"><img src="images/trophy-2.jpg" data-i18n-alt="alt.t2" alt="Cup and medals from the Republic Championship" loading="lazy"></div>
         <div class="ach-ic"><svg class="icon"><use href="#i-trophy"/></svg></div>
-        <div class="ach-body"><span class="ach-rank" data-i18n="ach.2r">1st Place</span><h3 data-i18n="ach.2t">Republic Championship</h3><span class="pill" data-i18n="ach.2p">Academy's first participation</span></div>
+        <span class="ach-rank" data-i18n="ach.2r">1st Place</span><h3 data-i18n="ach.2t">Republic Championship</h3><span class="pill" data-i18n="ach.2p">University's first participation</span>
       </article>
       <article class="ach reveal" style="--d:.2s">
-        <div class="ach-img"><img src="images/trophy-3.jpg" data-i18n-alt="alt.t3" alt="Medals from the American University Tournament" loading="lazy"></div>
         <div class="ach-ic"><svg class="icon"><use href="#i-trophy"/></svg></div>
-        <div class="ach-body"><span class="ach-rank" data-i18n="ach.3r">4th Place</span><h3 data-i18n="ach.3t">American University Tournament</h3><span class="pill" data-i18n="ach.3p">First participation</span></div>
+        <span class="ach-rank" data-i18n="ach.3r">4th Place</span><h3 data-i18n="ach.3t">American University Tournament</h3><span class="pill" data-i18n="ach.3p">First participation</span>
       </article>
       <article class="ach reveal">
-        <div class="ach-img"><img src="images/trophy-4.jpg" data-i18n-alt="alt.t4" alt="Cup from the Girls' Teams Tournament" loading="lazy"></div>
         <div class="ach-ic"><svg class="icon"><use href="#i-trophy"/></svg></div>
-        <div class="ach-body"><span class="ach-rank" data-i18n="ach.4r">2nd Place</span><h3 data-i18n="ach.4t">Girls' Teams Tournament</h3></div>
+        <span class="ach-rank" data-i18n="ach.4r">2nd Place</span><h3 data-i18n="ach.4t">Girls' Teams Tournament</h3>
       </article>
       <article class="ach reveal" style="--d:.1s">
-        <div class="ach-img"><img src="images/trophy-5.jpg" data-i18n-alt="alt.t5" alt="ACE Events Tournament Champions shields" loading="lazy"></div>
         <div class="ach-ic"><svg class="icon"><use href="#i-award"/></svg></div>
-        <div class="ach-body"><span class="ach-rank" data-i18n="ach.5r">Participations</span><h3 data-i18n="ach.5t">Participations alongside academies from Minya</h3></div>
+        <span class="ach-rank" data-i18n="ach.5r">Participations</span><h3 data-i18n="ach.5t">Participations alongside academies from Minya</h3>
       </article>
     </div>
   </div>
@@ -572,7 +563,7 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
       <figure class="g-item" data-cat="trophy"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-3.jpg" data-i18n-alt="galt.t3" alt="Medals from a tournament" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
       <figure class="g-item small" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/outdoor-1.jpg" data-i18n-alt="alt.o1" alt="Outdoor training" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
       <figure class="g-item" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/poster.jpg" data-i18n-alt="alt.poster" alt="Head Coach Mohamed Ragab poster with the PLV Academy logo" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-      <figure class="g-item" data-cat="trophy"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-4.jpg" data-i18n-alt="alt.t4" alt="Cup from the Girls' Teams Tournament" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+      <figure class="g-item" data-cat="trophy"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-4.jpg" data-i18n-alt="galt.t4" alt="Cup from a tournament" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
       <figure class="g-item small" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/outdoor-2.jpg" data-i18n-alt="alt.o2" alt="A moment from an outdoor session" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
       <figure class="g-item" data-cat="train"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/portrait.jpg" data-i18n-alt="alt.portrait" alt="Portrait of Coach Mohamed Ragab" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
       <figure class="g-item" data-cat="trophy"><button class="g-btn" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-5.jpg" data-i18n-alt="alt.t5" alt="ACE Events Tournament Champions shields" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
@@ -661,9 +652,9 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     'acad.f1':'كل الفئات السنية','acad.f2':'فريق مدربين',
     'acad.f3':'<span>فرعين</span><small>مدينة نصر ومصر الجديدة</small>',
     'acad.f4':'<span>لاعبين انضموا لأندية</span><small>ولاعبات بيجهزوا للانضمام</small>',
-    'ach.kicker':'البطولات والإنجازات','ach.title':'إنجازات <span>الأكاديمية</span>','ach.sub':'نتايج بتتحقق بالشغل والالتزام من أول ما الأكاديمية فتحت.',
+    'ach.kicker':'البطولات والإنجازات','ach.title':'<span>إنجازاتي</span>','ach.sub':'نتايج ومشاركات في البطولات.',
     'ach.1r':'المركز الأول','ach.1t':'بطولة الأكاديميات',
-    'ach.2r':'المركز الأول','ach.2t':'بطولة الجمهورية','ach.2p':'أول مشاركة للأكاديمية',
+    'ach.2r':'المركز الأول','ach.2t':'بطولة الجمهورية','ach.2p':'أول مشاركة للجامعة',
     'ach.3r':'المركز الرابع','ach.3t':'بطولة الجامعة الأمريكية','ach.3p':'أول مشاركة',
     'ach.4r':'المركز الثاني','ach.4t':'بطولة فرق البنات',
     'ach.5r':'مشاركات','ach.5t':'مشاركات مع أكاديميات من المنيا',
@@ -684,9 +675,8 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     'alt.hero':'المدرب محمد رجب بتيشيرت أكاديمية PLV',
     'alt.about':'محمد رجب ماسك ميدالية وكأس',
     'alt.poster':'بوستر المدرب محمد رجب Head Coach بشعار أكاديمية PLV',
-    'alt.t1':'كأس وميداليات بطولة الأكاديميات','alt.t2':'كأس وميداليات بطولة الجمهورية','alt.t3':'ميداليات بطولة الجامعة الأمريكية',
-    'alt.t4':'كأس بطولة فرق البنات','alt.t5':'دروع بطولة ACE Events Tournament Champions',
-    'galt.t1':'كأس وميداليات من بطولة','galt.t2':'كؤوس وميداليات من بطولة','galt.t3':'ميداليات من بطولة',
+    'alt.t5':'دروع بطولة ACE Events Tournament Champions',
+    'galt.t1':'كأس وميداليات من بطولة','galt.t2':'كؤوس وميداليات من بطولة','galt.t3':'ميداليات من بطولة','galt.t4':'كأس من بطولة',
     'alt.a1':'محمد رجب أثناء اللعب في القاعة','alt.a2':'لقطة لعب من داخل القاعة',
     'alt.portrait':'صورة شخصية للمدرب محمد رجب',
     'alt.coach':'المدرب محمد رجب أثناء التدريب','alt.gym':'تدريب اللياقة البدنية داخل الجيم',
