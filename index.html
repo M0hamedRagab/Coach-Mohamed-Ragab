@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" id="ogTitle" content="Mohamed Ragab | Volleyball Coach &amp; Founder of PLV Academy">
 <meta property="og:description" id="ogDesc" content="Head Coach and founder of PLV Academy, former player at Al Tayaran Club.">
-<meta property="og:image" content="images/hero.jpg">
+<meta property="og:image" content="https://m0hamedragab.github.io/Coach-Mohamed-Ragab/images/hero.jpg">
 <link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -223,6 +223,12 @@ html[lang="ar"] .hero h1{font-size:clamp(3rem,8.5vw,6.2rem);font-weight:900;line
 .t-item:nth-child(even) .t-dot{inset-inline-end:auto;inset-inline-start:-11px}
 .t-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s}
 .t-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--orange)}
+.t-media{display:grid;background:var(--navy)}
+.t-media img{display:block;width:100%;height:auto;object-fit:cover}
+.t-media.two{grid-template-columns:1fr 1fr;gap:3px}
+.t-media.two img{height:250px;object-position:center 30%}
+.rail-item.wide{width:520px}
+@media (max-width:600px){.rail-item.wide{width:300px}.t-media.two img{height:190px}}
 .t-body{padding:24px 26px 26px}
 .t-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
 .t-ic{width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--orange);display:grid;place-items:center;flex:none}
@@ -419,12 +425,12 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
   <div class="container two-col">
     <div class="photo-frame reveal from-start">
       <img src="images/about.jpg" data-i18n-alt="alt.about" alt="Mohamed Ragab holding a medal and a trophy" loading="lazy">
-      <div class="tag" data-i18n="about.tag">14 years on court</div>
+      <div class="tag" data-i18n="about.tag">12 years on court</div>
     </div>
     <div class="reveal from-end">
       <span class="kicker" data-i18n="about.kicker">About Me</span>
       <h2 class="sec-title" data-i18n="about.title">Former Player, <span>Now a Coach</span> Building Champions</h2>
-      <p class="lead" data-i18n="about.lead">I'm <strong>Mohamed Ragab</strong>. I played for <strong>14 years</strong> at <strong>Al Tayaran Club</strong> as an <strong>Opposite Hitter</strong>, and I have <strong>2 years of coaching experience</strong>. Today I pass that experience on to male and female players through PLV Academy.</p>
+      <p class="lead" data-i18n="about.lead">I'm <strong>Mohamed Ragab</strong>. I played for <strong>12 years</strong> at <strong>Al Tayaran Club</strong> as an <strong>Opposite Hitter</strong>, and I have <strong>2 years of coaching experience</strong>. Today I pass that experience on to male and female players through PLV Academy.</p>
       <div class="pillars">
         <div class="pillar"><div class="ic"><svg class="icon"><use href="#i-target"/></svg></div><div><h3 data-i18n="about.p1t">Position-Specific Skills</h3><p data-i18n="about.p1d">Focused training built around what each position demands.</p></div></div>
         <div class="pillar"><div class="ic"><svg class="icon"><use href="#i-bolt"/></svg></div><div><h3 data-i18n="about.p2t">Physical Fitness</h3><p data-i18n="about.p2d">Real attention to building strength, speed and endurance.</p></div></div>
@@ -440,7 +446,7 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     <div class="count reveal"><span class="num" dir="ltr" data-target="80" data-suffix="+">0</span><span class="lbl" data-i18n="cnt.1">Trainees</span></div>
     <div class="count reveal" style="--d:.1s"><span class="num" dir="ltr" data-target="6">0</span><span class="lbl" data-i18n="cnt.2">Training days per week</span></div>
     <div class="count reveal" style="--d:.2s"><span class="num" dir="ltr" data-target="2">0</span><span class="lbl" data-i18n="cnt.3">Branches</span></div>
-    <div class="count reveal" style="--d:.3s"><span class="num" dir="ltr" data-target="14">0</span><span class="lbl" data-i18n="cnt.4">Years as a player</span></div>
+    <div class="count reveal" style="--d:.3s"><span class="num" dir="ltr" data-target="12">0</span><span class="lbl" data-i18n="cnt.4">Years as a player</span></div>
     <div class="count reveal" style="--d:.4s"><span class="num" dir="ltr" data-target="2">0</span><span class="lbl" data-i18n="cnt.5">Years as a coach</span></div>
   </div>
 </section>
@@ -477,11 +483,11 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     <div class="ach-grid">
       <article class="ach reveal">
         <div class="ach-ic"><svg class="icon"><use href="#i-trophy"/></svg></div>
-        <span class="ach-rank" data-i18n="ach.1r">1st Place</span><h3 data-i18n="ach.1t">Institutes &amp; Academic Academies League</h3>
+        <span class="ach-rank" data-i18n="ach.1r">1st Place</span><h3 data-i18n="ach.1t">Academies Tournament</h3>
       </article>
       <article class="ach reveal" style="--d:.1s">
         <div class="ach-ic"><svg class="icon"><use href="#i-trophy"/></svg></div>
-        <span class="ach-rank" data-i18n="ach.2r">1st Place</span><h3 data-i18n="ach.2t">Republic Championship</h3><span class="pill" data-i18n="ach.2p">University's first participation</span>
+        <span class="ach-rank" data-i18n="ach.2r">1st Place</span><h3 data-i18n="ach.2t">Republic Championship</h3><span class="pill" data-i18n="ach.2p">Academy's first participation</span>
       </article>
       <article class="ach reveal" style="--d:.2s">
         <div class="ach-ic"><svg class="icon"><use href="#i-trophy"/></svg></div>
@@ -499,12 +505,14 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     <div class="ach-rail">
       <div class="rail" id="railTrophy" role="region" tabindex="0" data-i18n-aria="rail.trophy" aria-label="Photos from tournaments">
         <div class="rail-track">
+          <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/cup-1.jpg" data-i18n-alt="galt.c1" alt="Mohamed Ragab holding a cup and a medal" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
           <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-1.jpg" data-i18n-alt="galt.t1" alt="Cup and medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+          <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/cup-1.jpg" data-i18n-alt="galt.c1" alt="Mohamed Ragab holding a cup and a medal" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
           <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-2.jpg" data-i18n-alt="galt.t2" alt="Cups and medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+          <figure class="rail-item wide" data-cat="play"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/ministry-team.jpg" data-i18n-alt="alt.m1" alt="Group photo with the team" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
           <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-3.jpg" data-i18n-alt="galt.t3" alt="Medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
           <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-4.jpg" data-i18n-alt="galt.t4" alt="Cup from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
           <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-5.jpg" data-i18n-alt="alt.t5" alt="ACE Events Tournament Champions shields" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-          <figure class="rail-item"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/about.jpg" data-i18n-alt="alt.about" alt="Mohamed Ragab holding a medal and a trophy" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         </div>
       </div>
     </div>
@@ -521,14 +529,16 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     <div class="timeline">
       <div class="t-item reveal from-start">
         <span class="t-dot"></span>
-        <div class="t-card"><div class="t-body">
-          <div class="t-head"><span class="t-ic"><svg class="icon"><use href="#i-ball"/></svg></span><span class="t-when" data-i18n="jr.1w">14 years as a player</span></div>
+        <div class="t-card"><div class="t-media two"><img src="images/tayaran-match-1.jpg" data-i18n-alt="alt.tm1" alt="A moment from a match at Al Tayaran Club" loading="lazy"><img src="images/tayaran-match-2.jpg" data-i18n-alt="alt.tm2" alt="Another moment from a match at Al Tayaran Club" loading="lazy"></div>
+          <div class="t-body">
+          <div class="t-head"><span class="t-ic"><svg class="icon"><use href="#i-ball"/></svg></span><span class="t-when" data-i18n="jr.1w">12 years as a player</span></div>
           <h3 data-i18n="jr.1t">Al Tayaran Club</h3><p data-i18n="jr.1d">Played as an Opposite Hitter.</p>
         </div></div>
       </div>
       <div class="t-item reveal from-end">
         <span class="t-dot"></span>
-        <div class="t-card"><div class="t-body">
+        <div class="t-card"><div class="t-media"><img src="images/ministry-team.jpg" data-i18n-alt="alt.m1" alt="Group photo with the team" loading="lazy"></div>
+          <div class="t-body">
           <div class="t-head"><span class="t-ic"><svg class="icon"><use href="#i-trophy"/></svg></span><span class="t-when hl">2019</span></div>
           <h3 data-i18n="jr.2t">1st Place: School League &amp; School Team</h3><p data-i18n="jr.2d">Won first place in the schools league and with the schools team.</p>
         </div></div>
@@ -537,7 +547,7 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
         <span class="t-dot"></span>
         <div class="t-card"><div class="t-body">
           <div class="t-head"><span class="t-ic"><svg class="icon"><use href="#i-award"/></svg></span><span class="t-when" data-i18n="jr.3w">Coach</span></div>
-          <h3 data-i18n="jr.3t">Al Y Club</h3><p data-i18n="jr.3d">Coach of a girls' 15-year-old team and the beginners' (minis) team.</p>
+          <h3 data-i18n="jr.3t">Al Wai Club</h3><p data-i18n="jr.3d">Coach of a girls' 15-year-old team and the beginners' (minis) team.</p>
         </div></div>
       </div>
       <div class="t-item reveal from-end">
@@ -597,20 +607,20 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     <div class="rail" id="railGallery" role="region" tabindex="0" data-i18n-aria="rail.gal" aria-label="Photo gallery">
       <div class="rail-track">
         <figure class="rail-item" data-cat="play"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/action-1.jpg" data-i18n-alt="alt.a1" alt="Mohamed Ragab playing in the hall" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+          <figure class="rail-item" data-cat="play"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/tayaran-match-1.jpg" data-i18n-alt="alt.tm1" alt="A moment from a match at Al Tayaran Club" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-1.jpg" data-i18n-alt="galt.t1" alt="Cup and medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/coaching-1.jpg" data-i18n-alt="alt.coach" alt="Coach Mohamed Ragab during a training session" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item" data-cat="play"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/action-2.jpg" data-i18n-alt="alt.a2" alt="A match moment inside the hall" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+          <figure class="rail-item" data-cat="play"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/tayaran-match-2.jpg" data-i18n-alt="alt.tm2" alt="Another moment from a match at Al Tayaran Club" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-2.jpg" data-i18n-alt="galt.t2" alt="Cups and medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/gym.jpg" data-i18n-alt="alt.gym" alt="Fitness training in the gym" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item small" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/outdoor-1.jpg" data-i18n-alt="alt.o1" alt="Outdoor training" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
+          <figure class="rail-item small" data-cat="play"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/match-outdoor-1.jpg" data-i18n-alt="alt.mo1" alt="An outdoor match moment" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-3.jpg" data-i18n-alt="galt.t3" alt="Medals from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/portrait.jpg" data-i18n-alt="alt.portrait" alt="Portrait of Coach Mohamed Ragab" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item small" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/outdoor-2.jpg" data-i18n-alt="alt.o2" alt="A moment from an outdoor session" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-4.jpg" data-i18n-alt="galt.t4" alt="Cup from a tournament" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-        <figure class="rail-item" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/hero.jpg" data-i18n-alt="alt.hero" alt="Coach Mohamed Ragab wearing a PLV Academy shirt" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
         <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/trophy-5.jpg" data-i18n-alt="alt.t5" alt="ACE Events Tournament Champions shields" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-        <figure class="rail-item" data-cat="trophy"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/about.jpg" data-i18n-alt="alt.about" alt="Mohamed Ragab holding a medal and a trophy" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
-        <figure class="rail-item" data-cat="train"><button class="g-btn" type="button" data-i18n-aria="gal.zoom" aria-label="Enlarge image"><img src="images/poster.jpg" data-i18n-alt="alt.poster" alt="Head Coach Mohamed Ragab poster with the PLV Academy logo" loading="lazy" draggable="false"><span class="g-zoom"><svg class="icon"><use href="#i-zoom"/></svg></span></button></figure>
       </div>
     </div>
   </div>
@@ -659,9 +669,9 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     'hero.ex':'لاعب سابق: Opposite Hitter في نادي الطيران',
     'hero.btn1':'تواصل معايا','hero.btn2':'شوف إنجازاتي',
     'hero.loc':'مصر الجديدة، القاهرة','hero.age':'23 سنة',
-    'about.tag':'14 سنة في الملعب','about.kicker':'نبذة عني',
+    'about.tag':'12 سنة في الملعب','about.kicker':'نبذة عني',
     'about.title':'لاعب سابق، <span>ومدرب</span> بيبني أبطال',
-    'about.lead':'أنا <strong>محمد رجب</strong>، لعبت <strong>14 سنة</strong> في <strong>نادي الطيران</strong> في مركز <strong>Opposite Hitter</strong>، وليا <strong>سنتين خبرة كمدرب</strong>، ودلوقتي بنقل خبرتي للاعبين وللاعبات عن طريق أكاديمية PLV.',
+    'about.lead':'أنا <strong>محمد رجب</strong>، لعبت <strong>12 سنة</strong> في <strong>نادي الطيران</strong> في مركز <strong>Opposite Hitter</strong>، وليا <strong>سنتين خبرة كمدرب</strong>، ودلوقتي بنقل خبرتي للاعبين وللاعبات عن طريق أكاديمية PLV.',
     'about.p1t':'مهارات اللاعب حسب مركزه','about.p1d':'تدريب مخصص بيركز على المهارات اللي كل مركز محتاجها.',
     'about.p2t':'اللياقة البدنية','about.p2d':'اهتمام حقيقي ببناء القوة والسرعة والتحمل.',
     'about.p3t':'بيئة تدريب محترمة وأخلاقية','about.p3d':'مكان بيحترم اللاعب وبيبني الشخصية جنب المستوى الفني.',
@@ -671,13 +681,13 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     'acad.f3':'<span>فرعين</span><small>مدينة نصر ومصر الجديدة</small>',
     'acad.f4':'<span>لاعبين انضموا لأندية</span><small>ولاعبات بيجهزوا للانضمام</small>',
     'ach.kicker':'البطولات والإنجازات','ach.title':'<span>إنجازاتي</span>','ach.sub':'نتايج ومشاركات في البطولات.',
-    'ach.1r':'المركز الأول','ach.1t':'دوري المعاهد والأكاديميات',
-    'ach.2r':'المركز الأول','ach.2t':'بطولة الجمهورية','ach.2p':'أول مشاركة للجامعة',
+    'ach.1r':'المركز الأول','ach.1t':'بطولة الأكاديميات',
+    'ach.2r':'المركز الأول','ach.2t':'بطولة الجمهورية','ach.2p':'أول مشاركة للأكاديمية',
     'ach.3r':'المركز الرابع','ach.3t':'بطولة الجامعة الأمريكية','ach.3p':'أول مشاركة',
     'ach.4r':'المركز الثاني','ach.4t':'بطولة فرق البنات',
     'ach.5r':'مشاركات','ach.5t':'مشاركات مع أكاديميات من المنيا',
     'jr.kicker':'المسيرة','jr.title':'رحلتي في <span>الكرة الطائرة</span>',
-    'jr.1w':'14 سنة كلاعب','jr.1t':'نادي الطيران','jr.1d':'لاعب في مركز Opposite Hitter.',
+    'jr.1w':'12 سنة كلاعب','jr.1t':'نادي الطيران','jr.1d':'لاعب في مركز Opposite Hitter.',
     'jr.2t':'المركز الأول دوري ومنتخب المدارس','jr.2d':'تحقيق المركز الأول في دوري ومنتخب المدارس.',
     'jr.3w':'مدرب','jr.3t':'نادي الواي','jr.3d':'مدرب فريق بنات 15 سنة وفريق البراعم.',
     'jr.4w':'ديسمبر 2025','jr.4t':'تأسيس أكاديمية PLV','jr.4d':'افتتاح الأكاديمية بفرعين في مدينة نصر ومصر الجديدة.',
@@ -697,7 +707,8 @@ footer{background:var(--navy-d);color:rgba(255,255,255,.8);padding:34px 0;border
     'alt.a1':'محمد رجب أثناء اللعب في القاعة','alt.a2':'لقطة لعب من داخل القاعة',
     'alt.portrait':'صورة شخصية للمدرب محمد رجب',
     'alt.coach':'المدرب محمد رجب أثناء التدريب','alt.gym':'تدريب اللياقة البدنية داخل الجيم',
-    'alt.o1':'تدريب في الهواء الطلق','alt.o2':'لقطة من تدريب خارجي'
+    'alt.o1':'تدريب في الهواء الطلق','alt.o2':'لقطة من تدريب خارجي',
+    'galt.c1':'محمد رجب ماسك كأس وميدالية','alt.tm1':'لقطة من مباراة في نادي الطيران','alt.tm2':'لقطة تانية من مباراة في نادي الطيران','alt.m1':'صورة جماعية مع الفريق','alt.mo1':'لقطة من مباراة في الهواء الطلق'
   };
   var nodesT=$$('[data-i18n]'),nodesA=$$('[data-i18n-alt]'),nodesL=$$('[data-i18n-aria]');
   nodesT.forEach(function(e){e.dataset.en=e.innerHTML});
